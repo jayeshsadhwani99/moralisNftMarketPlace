@@ -3,7 +3,7 @@ import { Menu } from "antd";
 import { NavLink } from "react-router-dom";
 
 function MenuItems() {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation("/nftBalance");
 
   return (
     <Menu
@@ -18,8 +18,14 @@ function MenuItems() {
       }}
       defaultSelectedKeys={[pathname]}
     >
+      <Menu.Item key="/nftMarket">
+        <NavLink to="/nftMarket">Explore</NavLink>
+      </Menu.Item>
       <Menu.Item key="/nftBalance">
-        <NavLink to="/nftBalance">🖼 NFTs</NavLink>
+        <NavLink to="/nftBalance">Your Collection</NavLink>
+      </Menu.Item>
+      <Menu.Item key="/transactions">
+        <NavLink to="/transactions">Transactions</NavLink>
       </Menu.Item>
     </Menu>
   );
